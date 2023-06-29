@@ -31,7 +31,7 @@ BGPURPLE='\[\e[1;45m\]'
 # If the last command failed, add the exit code to the prompt, e.g. " ✖130 "
 __prompt_check_status() {
     if [[ $1 -ne 0 ]]; then
-        echo -e "${RED} \xE2\x9C\x96${1} ${RESET}"
+        echo -e "${RED} \xE2\x9C\x96${1}${RESET}"
     fi
 }
 
@@ -58,5 +58,5 @@ fi
 #
 # This could be used without git-prompt by simply concatenating the two arguments and assigning the result to PS1, i.e.:
 # PROMPT_COMMAND='PS1="${YELLOW}[\t]${RESET} ${USERBGCOL}\u${RESET}${LIGHTWHITE}:${RESET}${LIGHTPURPLE}\w${RESET} $(__prompt_check_status $?)${LIGHTWHITE}\\\$${RESET} "'
-PROMPT_COMMAND='__posh_git_ps1 "${YELLOW}[\t]${RESET} ${USERBGCOL}\u${RESET}${LIGHTWHITE}:${RESET}${LIGHTPURPLE}\w${RESET} " "$(__prompt_check_status $?)${LIGHTWHITE}\\\$${RESET} ";'
+PROMPT_COMMAND='__posh_git_ps1 "${YELLOW}[\t]${RESET} ${USERBGCOL}\u${RESET}${LIGHTWHITE}:${RESET}${LIGHTPURPLE}\w${RESET}" "$(__prompt_check_status $?) ${LIGHTWHITE}\\\$${RESET} ";'
 
