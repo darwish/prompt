@@ -4,5 +4,5 @@
 2. Add the following line to your `~/.bashrc` file:
 
 ```bash
-. ~/.prompt/prompt.sh`
+. ~/.prompt/prompt.sh
 ```
