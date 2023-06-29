@@ -58,5 +58,5 @@ fi
 #
 # This could be used without git-prompt by simply concatenating the two arguments and assigning the result to PS1, i.e.:
 # PROMPT_COMMAND='PS1="${YELLOW}[\t]${RESET} ${USERBGCOL}\u${RESET}${LIGHTWHITE}:${RESET}${LIGHTPURPLE}\w${RESET} $(__prompt_check_status $?)${LIGHTWHITE}\\\$${RESET} "'
-PROMPT_COMMAND='__posh_git_ps1 "${YELLOW}[\t]${RESET} ${USERBGCOL}\u${RESET}${LIGHTWHITE}:${RESET}${LIGHTPURPLE}\w${RESET}" "$(__prompt_check_status $?) ${LIGHTWHITE}\\\$${RESET} ";'
+PROMPT_COMMAND='__posh_git_ps1 "${YELLOW}[\t]${RESET} ${USERBGCOL}\u${RESET}${LIGHTWHITE}:${RESET}${LIGHTPURPLE}\w${RESET}" "$(__prompt_check_status $?) ${LIGHTWHITE}\\\$${RESET} "'
 

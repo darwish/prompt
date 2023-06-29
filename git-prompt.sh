@@ -143,7 +143,7 @@ __posh_git_echo () {
     local DefaultForegroundColor=$(__posh_color '\e[m') # Default no color
     local DefaultBackgroundColor=
 
-    local BeforeText='['
+    local BeforeText=' ['
     local BeforeForegroundColor=$(__posh_color '\e[1;33m') # Yellow
     local BeforeBackgroundColor=
     local DelimText=' |'
@@ -360,6 +360,14 @@ __posh_git_echo () {
 
     local gitstring=
     local branchstring="$isBare${b##refs/heads/}"
+    local gitdir="$(__posh_gitdir)"
+    if [[ -n "$gitdir" ]]; then
+        if [[ "$gitdir" == */.git/modules/* ]]; then
+            branchstring="$(basename "${gitdir//.git\/modules\/*/}")/$(basename "$(readlink -f "$gitdir")"):$branchstring"
+        else
+            branchstring="$(basename "$(dirname "$(readlink -f "$gitdir")")"):$branchstring"
+        fi
+    fi
 
     # before-branch text
     gitstring="$BeforeBackgroundColor$BeforeForegroundColor$BeforeText"

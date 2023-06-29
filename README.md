@@ -4,7 +4,7 @@
 
 ```bash
 curl -fsSL "https://raw.githubusercontent.com/darwish/prompt/master/prompt-install.sh" -o prompt-install.sh
-sh prompt-install.sh
+sh prompt-install.sh && rm prompt-install.sh
 ```
 
 ## Manually
